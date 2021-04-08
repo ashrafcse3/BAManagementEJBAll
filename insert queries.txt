@@ -1,0 +1,39 @@
+insert queries
+
+Group Execution
+
+INSERT INTO HA07.accountTypes (name) VALUES
+('Savings'),
+('Current'),
+('ISA (individual savings account)')
+SELECT * FROM HA07.accountTypes
+
+INSERT INTO HA07.bankAccount (customerid, accounttypeid, sortcode, branchname, iban, accountnumber, accountmoney) VALUES
+(1, 1, 123456, 'Cheapside', 'GB29NWBK60161331926819', 31926819, 100)
+INSERT INTO HA07.bankAccount (customerid, accounttypeid, sortcode, branchname, iban, accountnumber, accountmoney) VALUES
+(1, 2, 876325, 'Manchester', 'GB29NWBK60162561929819', 31926820, 1000)
+INSERT INTO HA07.bankAccount (customerid, accounttypeid, sortcode, branchname, iban, accountnumber, accountmoney) VALUES
+(1, 3, 987623, 'Hamberside', 'GB29NWBK60168231920919', 31926821, 900)
+INSERT INTO HA07.bankAccount (customerid, accounttypeid, sortcode, branchname, iban, accountnumber, accountmoney) VALUES
+(2, 3, 987628, 'Elupelu', 'GB29NWBK60168231920920', 31926821, 300)
+SELECT * FROM HA07.bankAccount
+
+INSERT INTO HA07.customer (name, passport, address, phone_number, email, password) VALUES
+('ha07', '533380006', '18 cawley road, london', '12344556789', 'ha07@email.com', '5c28b9282538a427c578126062dc1fc4')
+INSERT INTO HA07.customer (name, passport, address, phone_number, email, password) VALUES
+('ha071', '64447446', '1 hawley road, london', '07544556789', 'ha071@email.com', 'bcd4b3021cf004d9687549c2b867550e')
+SELECT * FROM HA07.customer
+
+INSERT INTO HA07.transactiondetails (transactiontypeid, amount, transactiondatetime, frombankaccountnumber, tobankaccountnumber) VALUES
+(1, 20.2, '2021-03-25 08:17:35.907', 31926819, 31926820)
+SELECT * FROM HA07.transactiondetails
+
+INSERT INTO HA07.transactiontypes (name) VALUES
+('deposit')
+INSERT INTO HA07.transactiontypes (name) VALUES
+('withdraw')
+INSERT INTO HA07.transactiontypes (name) VALUES
+('transfer')
+INSERT INTO HA07.transactiontypes (name) VALUES
+('standing order ')
+SELECT * FROM HA07.transactiontypes

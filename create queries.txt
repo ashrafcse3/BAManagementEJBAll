@@ -1,0 +1,42 @@
+create tables
+
+CREATE TABLE HA07.customer (
+  id int PRIMARY KEY GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1),
+  name varchar(40) DEFAULT NULL,
+  passport varchar(10) DEFAULT NULL,
+  address varchar(255) DEFAULT NULL,
+  phone_Number varchar(40) DEFAULT NULL,
+  email varchar(40) DEFAULT NULL,
+  password varchar(40) DEFAULT NULL
+)
+
+
+CREATE TABLE HA07.bankAccount (
+  id int PRIMARY KEY GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1),
+  customerID int NOT NULL,
+  accountTypeID int NOT NULL,
+  sortCode int NOT NULL,
+  branchName varchar(40) DEFAULT NULL,
+  IBAN varchar(22) DEFAULT NULL,
+  accountNumber int NOT NULL,
+  accountMoney double NOT NULL
+)
+
+CREATE TABLE HA07.accountTypes (
+  id int PRIMARY KEY GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1),
+  name varchar(40) default NULL
+)
+
+CREATE TABLE HA07.transactionDetails (
+  id int PRIMARY KEY GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1),
+  transactionTypeID int NOT NULL,
+  amount double NOT NULL,
+  transactionDateTime timestamp DEFAULT NULL,
+  frombankaccountnumber int NOT NULL,
+  tobankaccountnumber int NOT NULL
+)
+
+CREATE TABLE HA07.transactionTypes (
+  id int PRIMARY KEY GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1),
+  name varchar(10) default NULL
+)
